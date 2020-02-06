@@ -34,5 +34,5 @@
     "lint-staged": "^8.0.4"
   },
   "keywords": [],
-  "description": "React's tutorial, but with hooks. For the Egghead.io livestream."
+  "description": "React's tutorial, but with hooks."
 }

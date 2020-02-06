@@ -44,9 +44,9 @@ const gameReducer = createReducer({
   })
 });
 
-const Board = ({clickHandler, squares}) => {
+const Board = ({onClick, squares}) => {
   const renderSquare = index => (
-    <button className="square" onClick={clickHandler(index)}>
+    <button className="square" onClick={onClick(index)}>
       {squares[index]}
     </button>
   );
@@ -93,13 +93,13 @@ const Game = () => {
   const squares = history[stepNumber];
   const winner = calculateWinner(squares);
 
-  const clickHandler = index => () =>
+  const handleClick = index => () =>
     dispatch({type: 'SELECT_SQUARE', square: index, winner: winner});
 
   return (
     <div className="game">
       <div className="status">{getStatus(squares, xIsNext, winner)}</div>
-      <Board className="board" clickHandler={clickHandler} squares={squares} />
+      <Board className="board" onClick={handleClick} squares={squares} />
       <div className="game-info">
         <ol>{moves}</ol>
       </div>
